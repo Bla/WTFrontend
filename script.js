@@ -2,9 +2,8 @@ const TABEL_BREEDTE = 7
 const TABEL_HOOGTE = 6
 const SPELER1_KLEUR = "red"
 
-function maakTabel(tabelId) {
-    var tabel = document.getElementById("gameTabel");
-    console.log(tabel);
+function tabelMaken(tabelId) {
+    var tabel = document.getElementById(tabelId);
     for (var y=0; y<TABEL_HOOGTE; y++) {
         var rij = document.createElement("tr");
         tabel.appendChild(rij);
@@ -22,12 +21,13 @@ function maakTabel(tabelId) {
 }
 
 function vakjeVullen(vakjeId) {
-    var elem = document.getElementById(vakjeId);
-    var gespeeld = elem.getAttribute("data-gespeeld");
+    var huidigeVakje = document.getElementById(vakjeId);
+    var gespeeld = huidigeVakje.getAttribute("data-gespeeld");
     if (gespeeld == "none") {
-        elem.bgColor = SPELER1_KLEUR;
-        elem.style.border = "solid red";
-        elem.setAttribute("data-gespeeld", "speler1");
+        var ondersteVakje = document.getElementById(zwaartekracht(vakjeId));
+        ondersteVakje.bgColor = SPELER1_KLEUR;
+        ondersteVakje.style.border = "solid " + SPELER1_KLEUR;
+        ondersteVakje.setAttribute("data-gespeeld", "speler1");
     }
 }
 
@@ -35,8 +35,9 @@ function tijdelijkVullen(vakjeId) {
     var elem = document.getElementById(vakjeId);
     var gespeeld = elem.getAttribute("data-gespeeld");
     if (gespeeld == "none") {
-        elem.bgColor = SPELER1_KLEUR;
-        elem.style.border = SPELER1_KLEUR;
+        var ondersteVakje = document.getElementById(zwaartekracht(vakjeId));
+        ondersteVakje.bgColor = SPELER1_KLEUR;
+        ondersteVakje.style.border = "solid " +SPELER1_KLEUR;
     }
 }
 
@@ -44,7 +45,25 @@ function vakjeReset(vakjeId) {
     var elem = document.getElementById(vakjeId);
     var gespeeld = elem.getAttribute("data-gespeeld");
     if (gespeeld == "none") {
-    elem.bgColor = "white";
-    elem.style.border = "solid black";
+        var ondersteVakje = document.getElementById(zwaartekracht(vakjeId));
+        ondersteVakje.bgColor = "white";
+        ondersteVakje.style.border = "solid black";
     }
+}
+
+function zwaartekracht(vakjeId) {
+    var ondersteVakje = vakjeId;
+    var vakjeX = parseInt(vakjeId.slice(-2, -1));
+    var vakjeY = parseInt(vakjeId.slice(-1));
+    if (vakjeY<TABEL_HOOGTE-1){
+        for (var y=vakjeY; y<TABEL_HOOGTE-1; y++){
+            var volgendeY = y + 1;
+            var volgendeRij = "vakje" + vakjeX + volgendeY;
+            var gespeeld = document.getElementById(volgendeRij).getAttribute("data-gespeeld");
+            if (gespeeld == "none") {
+                ondersteVakje = volgendeRij;
+            }
+        }
+    }
+    return ondersteVakje;
 }
