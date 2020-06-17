@@ -6,64 +6,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-
+<body onload="maakTabel()">
 
     <table id="gameTabel">
-        <tr>
-            <td id="vakje00" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje01" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje02" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje03" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje04" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje05" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje06" data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
-        <tr>
-            <td id="vakje10"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje11"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje12"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje13"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje14"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje15"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje16"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
-        <tr>
-            <td id="vakje20"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje21"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje22"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje23"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje24"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje25"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje26"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
-        <tr>
-            <td id="vakje30"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje31"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje32"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje33"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje34"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje35"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje36"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
-        <tr>
-            <td id="vakje40"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje41"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje42"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje43"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje44"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje45"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje46"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
-        <tr>
-            <td id="vakje50"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje51"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje52"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje53"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje54"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje55"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-            <td id="vakje56"  data-gespeeld="none" onmouseover="tijdelijkVullen(this.id)" onmouseout="vakjeReset(this.id)" onclick="vakjeVullen(this.id)"></td>
-        </tr>
+        <!-- content -->
     </table>
 
 </body>
