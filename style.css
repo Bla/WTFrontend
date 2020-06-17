@@ -1,5 +1,14 @@
+body {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
 td {
     border: solid black;
+    border-radius: 50%;
     height: 50px;
     width: 50px;
 }
