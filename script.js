@@ -31,7 +31,6 @@ function starten() {
     document.getElementById('game-container').style.visibility = "visible";
     document.getElementById('invoer').style.display = "none";
     document.getElementById('display').style.display = "flex";
-    console.log(naamSpeler1,naamSpeler2)
 }
 
 function vakjeVullen(vakjeId) {
@@ -54,6 +53,8 @@ function vakjeVullen(vakjeId) {
             speler = 1;
         }
     }
+    winHorizontaal();
+    winVerticaal();
 }
 
 function tijdelijkVullen(vakjeId) {
@@ -97,4 +98,74 @@ function zwaartekracht(vakjeId) {
         }
     }
     return ondersteVakje;
+}
+
+function winHorizontaal() {
+    var speler = "none"
+    var teller = 0
+    for (var y=0; y<TABEL_HOOGTE; y++) {
+        for (var x=0; x<TABEL_BREEDTE; x++) {
+            var vakje = "vakje" + x + y;
+            var elem = document.getElementById(vakje).getAttribute("data-gespeeld");
+            if (elem == "none") {
+                teller = 0;
+            }
+            else if ((elem != "none") && (teller == 0)) {
+                speler = elem;
+                teller++;
+            }
+            else if ((elem != "none") && (teller != 0) && (speler == elem)) {
+                teller++;
+            }
+            else {
+                speler = elem;
+                teller = 1;
+            }
+            if (teller == 4) {
+                var naam;
+                if (speler == "speler1") {
+                    naam = naamSpeler1;
+                }
+                else {
+                    naam = naamSpeler2;
+                }
+                alert(naam + " is de winnaar!");
+            }
+        }
+    }
+}
+
+function winVerticaal() {
+    var speler = "none"
+    var teller = 0
+    for (var x=0; x<TABEL_BREEDTE; x++) {
+        for (var y=0; y<TABEL_HOOGTE; y++) {
+            var vakje = "vakje" + x + y;
+            var elem = document.getElementById(vakje).getAttribute("data-gespeeld");
+            if (elem == "none") {
+                teller = 0;
+            }
+            else if ((elem != "none") && (teller == 0)) {
+                speler = elem;
+                teller++;
+            }
+            else if ((elem != "none") && (teller != 0) && (speler == elem)) {
+                teller++;
+            }
+            else {
+                speler = elem;
+                teller = 1;
+            }
+            if (teller == 4) {
+                var naam;
+                if (speler == "speler1") {
+                    naam = naamSpeler1;
+                }
+                else {
+                    naam = naamSpeler2;
+                }
+                alert(naam + " is de winnaar!");
+            }
+        }
+    }
 }
