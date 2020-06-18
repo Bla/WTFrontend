@@ -1,6 +1,8 @@
 const TABEL_BREEDTE = 7
 const TABEL_HOOGTE = 6
 const SPELER1_KLEUR = "red"
+const SPELER2_KLEUR = "yellow"
+var speler = 1   // speler1 = 1, speler2 = 2
 
 function tabelMaken(tabelId) {
     var tabel = document.getElementById(tabelId);
@@ -25,9 +27,18 @@ function vakjeVullen(vakjeId) {
     var gespeeld = huidigeVakje.getAttribute("data-gespeeld");
     if (gespeeld == "none") {
         var ondersteVakje = document.getElementById(zwaartekracht(vakjeId));
-        ondersteVakje.bgColor = SPELER1_KLEUR;
-        ondersteVakje.style.border = "solid " + SPELER1_KLEUR;
-        ondersteVakje.setAttribute("data-gespeeld", "speler1");
+        if (speler == 1){
+            ondersteVakje.bgColor = SPELER1_KLEUR;
+            ondersteVakje.style.border = "solid " + SPELER1_KLEUR;
+            ondersteVakje.setAttribute("data-gespeeld", "speler1");
+            speler = 2;
+        }
+        else if (speler == 2) {
+            ondersteVakje.bgColor = SPELER2_KLEUR;
+            ondersteVakje.style.border = "solid " + SPELER2_KLEUR;
+            ondersteVakje.setAttribute("data-gespeeld", "speler2");
+            speler = 1;
+        }
     }
 }
 
@@ -36,8 +47,14 @@ function tijdelijkVullen(vakjeId) {
     var gespeeld = elem.getAttribute("data-gespeeld");
     if (gespeeld == "none") {
         var ondersteVakje = document.getElementById(zwaartekracht(vakjeId));
-        ondersteVakje.bgColor = SPELER1_KLEUR;
-        ondersteVakje.style.border = "solid " +SPELER1_KLEUR;
+        if (speler == 1){
+            ondersteVakje.bgColor = SPELER1_KLEUR;
+            ondersteVakje.style.border = "solid " + SPELER1_KLEUR;
+        }
+        if (speler == 2) {
+            ondersteVakje.bgColor = SPELER2_KLEUR;
+            ondersteVakje.style.border = "solid " + SPELER2_KLEUR;
+        }
     }
 }
 
