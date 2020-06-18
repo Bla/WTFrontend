@@ -3,9 +3,11 @@ const TABEL_HOOGTE = 6
 const SPELER1_KLEUR = "red"
 const SPELER2_KLEUR = "yellow"
 var speler = 1   // speler1 = 1, speler2 = 2
+var naamSpeler1
+var naamSpeler2
 
-function tabelMaken(tabelId) {
-    var tabel = document.getElementById(tabelId);
+function tabelMaken() {
+    var tabel = document.getElementById('game-tabel');
     for (var y=0; y<TABEL_HOOGTE; y++) {
         var rij = document.createElement("tr");
         tabel.appendChild(rij);
@@ -22,6 +24,16 @@ function tabelMaken(tabelId) {
     }
 }
 
+function starten() {
+    naamSpeler1 = document.getElementById('naam1').value;
+    naamSpeler2 = document.getElementById('naam2').value;
+    document.getElementById('game-tekst').innerHTML = naamSpeler1;
+    document.getElementById('game-container').style.visibility = "visible";
+    document.getElementById('invoer').style.display = "none";
+    document.getElementById('display').style.display = "flex";
+    console.log(naamSpeler1,naamSpeler2)
+}
+
 function vakjeVullen(vakjeId) {
     var huidigeVakje = document.getElementById(vakjeId);
     var gespeeld = huidigeVakje.getAttribute("data-gespeeld");
@@ -31,12 +43,14 @@ function vakjeVullen(vakjeId) {
             ondersteVakje.bgColor = SPELER1_KLEUR;
             ondersteVakje.style.border = "solid " + SPELER1_KLEUR;
             ondersteVakje.setAttribute("data-gespeeld", "speler1");
+            document.getElementById('game-tekst').innerHTML = naamSpeler2;
             speler = 2;
         }
         else if (speler == 2) {
             ondersteVakje.bgColor = SPELER2_KLEUR;
             ondersteVakje.style.border = "solid " + SPELER2_KLEUR;
             ondersteVakje.setAttribute("data-gespeeld", "speler2");
+            document.getElementById('game-tekst').innerHTML = naamSpeler1;
             speler = 1;
         }
     }

@@ -2,6 +2,14 @@ body {
     text-align: center;
 }
 
+#game-container {
+    visibility: hidden;
+}
+
+.nodisplay {
+    display: none;
+}
+
 table {
     margin: 0 auto;
 }
@@ -11,4 +19,21 @@ td {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.speler {
+    flex-direction: row;
+    width: 200px;
+    height: 70px;
+}
+
+.startknop {
+    flex-direction: column;
+    width: 50px;
+    height: 70px;
 }

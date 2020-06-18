@@ -6,11 +6,32 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="tabelMaken('gameTabel')">
+<body onload="tabelMaken()">
     <h1>Vier op een rij</h1>
-    <table id="gameTabel">
-        <!-- content -->
-    </table>
+    <div class="info" id="invoer">
+        <div class="speler" id="speler1">
+            Naam speler 1:
+            <input type="text" id="naam1" value="John Doe">
+        </div>
+        <div id="startknop" onclick="starten()">
+            <br>
+            <button type="button" id="start">Start</button>
+        </div>
+        <div class="speler" id="speler2">
+            Naam speler 2:
+            <input type="text" id="naam2" value="Jane Doe">
+        </div>
+    </div>
+    <div class="info nodisplay" id="display">
+        <div class="speler">
+            <h2 id="game-tekst"></h2>
+        </div>
+    </div>
+    <div id="game-container">
+        <table id="game-tabel">
+            <!-- content -->
+        </table>
+    </div>
 
 </body>
 </html> 
