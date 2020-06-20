@@ -5,6 +5,7 @@ const SPELER2_KLEUR = "yellow"
 var speler = 1   // speler1 = 1, speler2 = 2
 var naamSpeler1
 var naamSpeler2
+var movesList = []
 
 function tabelMaken() {
     var tabel = document.getElementById('game-tabel');
@@ -28,9 +29,32 @@ function starten() {
     naamSpeler1 = document.getElementById('naam1').value;
     naamSpeler2 = document.getElementById('naam2').value;
     document.getElementById('game-tekst').innerHTML = naamSpeler1;
+    document.getElementById('resetknop').style.visibility = "visible";
     document.getElementById('game-container').style.visibility = "visible";
     document.getElementById('invoer').style.display = "none";
     document.getElementById('display').style.display = "flex";
+}
+
+function laadSpel() {
+    var retrievedObject = JSON.parse(localStorage.getItem('game'));
+    retrievedObject.forEach(element => vakjeVullen(element['move']));
+    starten();
+}
+
+function resetSpel() {
+    speler = 1;
+    document.getElementById('resetknop').style.visibility = "visible";
+    document.getElementById('game-container').style.visibility = "hidden";
+    document.getElementById('invoer').style.display = "flex";
+    document.getElementById('display').style.display = "none";
+    movesList = [];
+    resetTabel();
+}
+
+function resetTabel() {
+    var tabel = document.getElementById('game-tabel');
+    tabel.innerHTML = "";
+    tabelMaken();
 }
 
 function vakjeVullen(vakjeId) {
@@ -52,6 +76,12 @@ function vakjeVullen(vakjeId) {
             document.getElementById('game-tekst').innerHTML = naamSpeler1;
             speler = 1;
         }
+        var move = {
+            "player": ondersteVakje.getAttribute("data-gespeeld"),
+            "move": ondersteVakje.id
+        }
+        movesList.push(move);
+        localStorage.setItem("game", JSON.stringify(movesList));
     }
     winHorizontaal();
     winVerticaal();

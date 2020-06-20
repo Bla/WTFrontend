@@ -13,6 +13,10 @@
             Naam speler 1:
             <input type="text" id="naam1" value="John Doe">
         </div>
+        <div id="laadknop" onclick="laadSpel()">
+            <br>
+            <button type="button" id="load">Load</button>
+        </div>
         <div id="startknop" onclick="starten()">
             <br>
             <button type="button" id="start">Start</button>
@@ -22,9 +26,12 @@
             <input type="text" id="naam2" value="Jane Doe">
         </div>
     </div>
-    <div class="info nodisplay" id="display">
+    <div class="info" id="display">
         <div class="speler">
             <h2 id="game-tekst"></h2>
+            <div id="resetknop" onclick="resetSpel()">
+                <button type="button" id="reset">Reset</button>
+            </div>
         </div>
     </div>
     <div id="game-container">
