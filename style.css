@@ -6,30 +6,9 @@ body {
     visibility: hidden;
 }
 
-.nodisplay {
-    display: none;
-}
-
-table {
-    margin: 0 auto;
-}
-
-td {
-    border: solid black;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-}
-
 .info {
     display: flex;
     justify-content: center;
-}
-
-.speler {
-    flex-direction: row;
-    width: 200px;
-    height: 100px;
 }
 
 .speler {
@@ -50,4 +29,15 @@ td {
 
 #display {
     height: 100px;
+}g
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    border: solid black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
 }

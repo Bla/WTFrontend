@@ -6,6 +6,7 @@ var speler = 1   // speler1 = 1, speler2 = 2
 var naamSpeler1
 var naamSpeler2
 var movesList = []
+var winnaar = false
 
 function tabelMaken() {
     var tabel = document.getElementById('game-tabel');
@@ -37,8 +38,13 @@ function starten() {
 
 function laadSpel() {
     var retrievedObject = JSON.parse(localStorage.getItem('game'));
-    retrievedObject.forEach(element => vakjeVullen(element['move']));
-    starten();
+    if (retrievedObject != null) {
+        retrievedObject.forEach(element => vakjeVullen(element['move']));
+        starten();
+    }
+    else {
+        alert("No previous game data found.")
+    }
 }
 
 function resetSpel() {
