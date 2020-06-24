@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mijn Account</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Mijn Account</h1>
+
+<div class="content">
+    <div class="column-flex">
+        <h2>Gegevens wijzigen</h2>
+        <form>
+            Naam:<br>
+            <input type="text" id="name" value="John Doe"><br><br>
+            Gebruikersnaam:<br>
+            <input type="text" id="username" value="JohnDoe9001"><br><br>
+            E-mailadres:<br>
+            <input type="text" id="email" value="john@doe.com"><br><br>
+            Telefoonnummer:<br>
+            <input type="text" id="phone" value="0123456789"><br><br>
+            Adres (straat + huisnummer):<br>
+            <input type="text" id="address" value="Straat 1"><br><br>
+            Plaats:<br>
+            <input type="text" id="place" value="Stad"><br><br>
+            Postcode:<br>
+            <input type="text" id="postalcode" value="1337 HX"><br><br>
+            <button type="button" id="cancel">Annuleren</button>
+            <button type="button" id="save">Opslaan</button>
+        </form>
+    </div>
+    <div class="column-flex">
+        <h2>Wachtwoord wijzigen</h2>
+        <form>
+            Oud wachtwoord:<br>
+            <input type="password" id="oldpass" value="hunter2"><br><br>
+            Nieuw wachtwoord:<br>
+            <input type="password" id="newpass"><br><br>
+            Herhaal watchwoord:<br>
+            <input type="password" id="newpassrepeat"><br><br>
+            <button type="button" id="changepassword">Wachtwoord wijzigen</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html> 
