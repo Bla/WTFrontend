@@ -4,9 +4,9 @@ body {
 
 .content {
     display: flex;
+    flex-direction: row;
 }
 
-.column-flex {
-    flex-direction: row;
+.sub-content {
     width: 50%;
 }
